@@ -17,5 +17,5 @@ class TabContent extends Component {
 }
 
 const mapStateToProps = (state) => ({ tab: state.tab });
-const mapDispatchToPros = (action) => bindActionCreators({});
+const mapDispatchToPros = (dispacth) => bindActionCreators({});
 export default connect(mapStateToProps, mapDispatchToPros)(TabContent);
