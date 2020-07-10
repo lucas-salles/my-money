@@ -7,7 +7,6 @@ import { bindActionCreators } from "redux";
 import { login, signup } from "./authActions";
 import Row from "../common/layout/row";
 import Grid from "../common/layout/grid";
-import If from "../common/operator/if";
 import Messages from "../common/msg/messages";
 import Input from "../common/form/inputAuth";
 
@@ -79,7 +78,7 @@ class Auth extends Component {
             </Row>
           </form>
           <br />
-          <a onClick={() => this.changeMode()}>
+          <a href onClick={() => this.changeMode()}>
             {loginMode
               ? "Novo usuário? Registrar aqui!"
               : "Já é cadastrado? Entrar aqui!"}
