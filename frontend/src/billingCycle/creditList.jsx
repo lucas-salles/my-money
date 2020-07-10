@@ -5,6 +5,7 @@ import Input from "../common/form/input";
 
 class CreditList extends Component {
   render() {
+    const list = this.props.list || [];
     return (
       <Grid cols={this.props.cols}>
         <fieldset>
@@ -18,25 +19,27 @@ class CreditList extends Component {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <Field
-                    name="credits[0].name"
-                    component={Input}
-                    placeholder="Informe o nome"
-                    readOnly={this.props.readOnly}
-                  />
-                </td>
-                <td>
-                  <Field
-                    name="credits[0].value"
-                    component={Input}
-                    placeholder="Informe o valor"
-                    readOnly={this.props.readOnly}
-                  />
-                </td>
-                <td></td>
-              </tr>
+              {list.map((item, index) => (
+                <tr key={index}>
+                  <td>
+                    <Field
+                      name={`credits[${index}].name`}
+                      component={Input}
+                      placeholder="Informe o nome"
+                      readOnly={this.props.readOnly}
+                    />
+                  </td>
+                  <td>
+                    <Field
+                      name={`credits[${index}].value`}
+                      component={Input}
+                      placeholder="Informe o valor"
+                      readOnly={this.props.readOnly}
+                    />
+                  </td>
+                  <td></td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </fieldset>
